@@ -1404,7 +1404,7 @@
   
     <li class="md-nav__item">
       <a href="../../../core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9912,7 +9912,7 @@
 <li>Program… Add the functionality to the node</li>
 <li>Build the node and copy to correct location: <code>n8n-node-dev build</code>
     That command will build the JavaScript version of the node from the TypeScript code and copy it to the user folder where custom nodes get read from <code>~/.n8n/custom/</code></li>
-<li>Restart n8n and refresh the window so that the new node gets displayed</li>
+<li>Restart Doc² and refresh the window so that the new node gets displayed</li>
 </ol>
 <h2 id="create-own-custom-n8n-nodes-module">Create own custom n8n-nodes-module<a class="headerlink" href="#create-own-custom-n8n-nodes-module" title="Permanent link">#</a></h2>
 <p>If you want to create multiple custom nodes which are either:</p>
@@ -9927,7 +9927,7 @@
 </div>
 <p>It is best to create your own <code>n8n-nodes-module</code> which can be installed separately.
 That is an npm package that contains the nodes and is set up in a way
-that n8n can automatically find and load them on startup.</p>
+that Doc² can automatically find and load them on startup.</p>
 <p>When creating such a module the following rules have to be followed that n8n
 can automatically find the nodes in the module:</p>
 <ul>
@@ -9952,7 +9952,7 @@ For example like this:</p>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Create folder for n8n installation</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Create folder for Doc² installation</span>
 mkdir my-n8n
 <span class="nb">cd</span> my-n8n
 
@@ -9981,7 +9981,7 @@ npm run build
 npm link
 </code></pre></div>
 </td></tr></table>
-<p>Then in the folder in which n8n is installed:</p>
+<p>Then in the folder in which Doc² is installed:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>

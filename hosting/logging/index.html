@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9844,9 +9844,9 @@
 
 
 <h1 id="logging-in-n8n">Logging in n8n<a class="headerlink" href="#logging-in-n8n" title="Permanent link">#</a></h1>
-<p>Logging is an important feature for debugging. n8n uses the <a href="https://www.npmjs.com/package/winston">winston</a> logging library.</p>
+<p>Logging is an important feature for debugging. Doc² uses the <a href="https://www.npmjs.com/package/winston">winston</a> logging library.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h2>
-<p>To set up logging in n8n, you need to set the following environment variables (you can also set the values in the <a href="/hosting/configuration/#configuration-via-file">configuration file</a>)</p>
+<p>To set up logging in Doc², you need to set the following environment variables (you can also set the values in the <a href="/hosting/configuration/#configuration-via-file">configuration file</a>)</p>
 <table>
 <thead>
 <tr>
@@ -9874,7 +9874,7 @@
 <tr>
 <td>n8n.log.file.maxsize</td>
 <td>N8N_LOG_FILE_MAXSIZE</td>
-<td>The maximum size (in MB) for each log file. By default, n8n uses 16 MB.</td>
+<td>The maximum size (in MB) for each log file. By default, Doc² uses 16 MB.</td>
 </tr>
 <tr>
 <td>n8n.log.file.maxcount</td>
@@ -9918,8 +9918,8 @@
 <li><code>error</code>: the most strict level. Outputs only errors and nothing else</li>
 <li><code>warning</code>: outputs errors and warning messages</li>
 <li><code>info</code>: contains useful information about progress</li>
-<li><code>verbose</code>: make n8n output additional information about progress that allows you to further understand what is happening</li>
-<li><code>debug</code>: the most verbose output. n8n outputs a lot of information to help you debug issues.</li>
+<li><code>verbose</code>: make Doc² output additional information about progress that allows you to further understand what is happening</li>
+<li><code>debug</code>: the most verbose output. Doc² outputs a lot of information to help you debug issues.</li>
 </ul>
 <h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">#</a></h2>
 <p>During development, adding log messages is a good practice. It assists in debugging errors. To configure logging for development, follow the guide below.</p>

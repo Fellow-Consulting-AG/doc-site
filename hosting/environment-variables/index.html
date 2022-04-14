@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9910,7 +9910,7 @@
 <h1 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title"> Keep in mind</p>
-<p>You can provide a <a href="/hosting/configuration/#configuration-via-file">configuration file</a> for n8n, and also append <code>_FILE</code> to certain variables to provide their configuration separately, indicated by "/<code>_FILE</code>" below.</p>
+<p>You can provide a <a href="/hosting/configuration/#configuration-via-file">configuration file</a> for Doc², and also append <code>_FILE</code> to certain variables to provide their configuration separately, indicated by "/<code>_FILE</code>" below.</p>
 </div>
 <h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">#</a></h2>
 <p>Enabling overwrites for credentials allows you to set default values for credentials which get automatically prefilled. The user cannot see or change these credentials. The format is <code>{ CREDENTIAL_NAME: { PARAMTER: VALUE }}</code>.</p>
@@ -10116,32 +10116,32 @@
 <tr>
 <td align="left"><code>N8N_ENCRYPTION_KEY</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">Provide a custom key used to encrypt credentials in the n8n database. By default a random key is generated on first launch.</td>
+<td align="left">Provide a custom key used to encrypt credentials in the Doc² database. By default a random key is generated on first launch.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_USER_FOLDER</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">Provide the path where n8n will store user-specific data, such as database file and encryption key. By default, <code>.n8n</code> is used.</td>
+<td align="left">Provide the path where Doc² will store user-specific data, such as database file and encryption key. By default, <code>.n8n</code> is used.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_PATH</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">The path n8n is deployed to. Default is <code>/</code>.</td>
+<td align="left">The path Doc² is deployed to. Default is <code>/</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_HOST</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">Host name where n8n can be reached. Default is <code>localhost</code>.</td>
+<td align="left">Host name where Doc² can be reached. Default is <code>localhost</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_PORT</code></td>
 <td align="left"><code>number</code></td>
-<td align="left">The HTTP port where n8n can be reached. Default is <code>5678</code>.</td>
+<td align="left">The HTTP port where Doc² can be reached. Default is <code>5678</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_LISTEN_ADDRESS</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">The IP address n8n should listen on. Default is <code>0.0.0.0</code>.</td>
+<td align="left">The IP address Doc² should listen on. Default is <code>0.0.0.0</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_PROTOCOL</code></td>
@@ -10161,7 +10161,7 @@
 <tr>
 <td align="left"><code>N8N_PERSONALIZATION_ENABLED</code></td>
 <td align="left"><code>boolean</code></td>
-<td align="left">Whether to ask users personalisation questions and then customise n8n accordingly. Default is <code>true</code>.</td>
+<td align="left">Whether to ask users personalisation questions and then customise Doc² accordingly. Default is <code>true</code>.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_VERSION_NOTIFICATIONS_ENABLED</code></td>
@@ -10181,7 +10181,7 @@
 <tr>
 <td align="left"><code>N8N_DIAGNOSTICS_ENABLED</code></td>
 <td align="left"><code>boolean</code></td>
-<td align="left">Whether to share selected, anonymous <a href="/reference/data-collection/">telemetry</a> with n8n</td>
+<td align="left">Whether to share selected, anonymous <a href="/reference/data-collection/">telemetry</a> with Doc²</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_DIAGNOSTICS_CONFIG_FRONTEND</code></td>
@@ -10238,7 +10238,7 @@
 <tr>
 <td align="left"><code>N8N_USER_MANAGEMENT_DISABLED</code></td>
 <td align="left">Boolean</td>
-<td align="left">Defaults to user management enabled (false). Set to <code>true</code> to disable the <a href="/hosting/user-management/">user management</a> feature. Note that n8n ignores this environment variable if you have already set up an owner account.</td>
+<td align="left">Defaults to user management enabled (false). Set to <code>true</code> to disable the <a href="/hosting/user-management/">user management</a> feature. Note that Doc² ignores this environment variable if you have already set up an owner account.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_EMAIL_MODE</code></td>
@@ -10335,7 +10335,7 @@
 <tr>
 <td align="left"><code>WEBHOOK_URL</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">Used to manually provide the Webhook URL when running n8n behind a reverse proxy. See <a href="/hosting/configuration/#webhook-url">here</a> for more details.</td>
+<td align="left">Used to manually provide the Webhook URL when running Doc² behind a reverse proxy. See <a href="/hosting/configuration/#webhook-url">here</a> for more details.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_DISABLE_PRODUCTION_MAIN_PROCESS</code></td>
@@ -10597,12 +10597,12 @@
 <tr>
 <td align="left"><code>N8N_BASIC_AUTH_USER</code>/<code>_FILE</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">The name of the n8n user for basic authentication.</td>
+<td align="left">The name of the Doc² user for basic authentication.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_BASIC_AUTH_PASSWORD</code>/<code>_FILE</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">The password of the n8n user for basic authentication.</td>
+<td align="left">The password of the Doc² user for basic authentication.</td>
 </tr>
 <tr>
 <td align="left"><code>N8N_BASIC_AUTH_HASH</code>/<code>_FILE</code></td>

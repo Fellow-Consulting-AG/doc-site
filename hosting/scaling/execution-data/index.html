@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9810,7 +9810,7 @@
 
 
 <h1 id="execution-data">Execution data<a class="headerlink" href="#execution-data" title="Permanent link">#</a></h1>
-<p>Depending on your executions settings and volume, your n8n database can quickly swell in size and eventually run out of storage. </p>
+<p>Depending on your executions settings and volume, your Doc² database can quickly swell in size and eventually run out of storage. </p>
 <p>To avoid this and ensure continued proper functionality, it is recommended to ensure you are only saving the desired data and to enable pruning of old executions data.</p>
 <p>This is done by configuring the corresponding <a href="/hosting/environment-variables/#executions">environment variables</a>.</p>
 <h2 id="saving-data">Saving data<a class="headerlink" href="#saving-data" title="Permanent link">#</a></h2>
@@ -9850,7 +9850,7 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>docker run -it --rm <span class="se">\</span>
-    --name n8n <span class="se">\</span>
+    --name Doc² <span class="se">\</span>
     -p <span class="m">5678</span>:5678 <span class="se">\</span>
     -e <span class="nv">EXECUTIONS_DATA_SAVE_ON_ERROR</span><span class="o">=</span>all <span class="se">\</span>
     -e <span class="nv">EXECUTIONS_DATA_SAVE_ON_SUCCESS</span><span class="o">=</span>none <span class="se">\</span>
@@ -9903,7 +9903,7 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>docker run -it --rm <span class="se">\</span>
-    --name n8n <span class="se">\</span>
+    --name Doc² <span class="se">\</span>
     -p <span class="m">5678</span>:5678 <span class="se">\</span>
     -e <span class="nv">EXECUTIONS_DATA_PRUNE</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
     -e <span class="nv">EXECUTIONS_DATA_MAX_AGE</span><span class="o">=</span><span class="m">168</span> <span class="se">\</span>
@@ -9925,7 +9925,7 @@
 </code-group></p>
 <div class="admonition note">
 <p class="admonition-title"> Keep in mind</p>
-<p>If you are running n8n using the default SQLite database, the disk-space of any pruned data is not automatically freed up but rather reused for future executions data. To free up this space configure the <code>DB_SQLITE_VACUUM_ON_STARTUP</code> <a href="/hosting/environment-variables/#sqlite">environment variable</a> or manually run the <a href="https://www.sqlite.org/lang_vacuum.html">VACUUM</a> operation.</p>
+<p>If you are running Doc² using the default SQLite database, the disk-space of any pruned data is not automatically freed up but rather reused for future executions data. To free up this space configure the <code>DB_SQLITE_VACUUM_ON_STARTUP</code> <a href="/hosting/environment-variables/#sqlite">environment variable</a> or manually run the <a href="https://www.sqlite.org/lang_vacuum.html">VACUUM</a> operation.</p>
 </div>
 
               

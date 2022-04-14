@@ -1404,7 +1404,7 @@
   
     <li class="md-nav__item">
       <a href="../../../core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9950,7 +9950,7 @@
 It is however not needed to always clone all the data. If a node for, example only, changes only the binary data but not the JSON data, a new item can be created which reuses the reference to the JSON item.</p>
 <p>An example can be seen in the code of the <a href="https://github.com/n8n-io/n8n/blob/master/packages/nodes-base/nodes/ReadBinaryFile.node.ts#L69-L83">ReadBinaryFile-Node</a>.</p>
 <h2 id="write-nodes-in-typescript">Write nodes in TypeScript<a class="headerlink" href="#write-nodes-in-typescript" title="Permanent link">#</a></h2>
-<p>All code of n8n is written in TypeScript and hence, the nodes should also be written in TypeScript. That makes development easier, faster, and avoids at least some bugs.</p>
+<p>All code of Doc² is written in TypeScript and hence, the nodes should also be written in TypeScript. That makes development easier, faster, and avoids at least some bugs.</p>
 <h2 id="use-the-built-in-request-library">Use the built in request library<a class="headerlink" href="#use-the-built-in-request-library" title="Permanent link">#</a></h2>
 <p>Some third-party services have their own libraries on npm which make it easier to create an integration. It can be quite tempting to use them. The problem with those is that you add another dependency and not only one, you add but also all the dependencies of the dependencies. This means more and more code gets added, has to get loaded, can introduce security vulnerabilities, bugs, and so on. So please use the built-in module which can be used like this:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">helpers</span><span class="p">.</span><span class="nx">httpRequest</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
@@ -9959,7 +9959,7 @@ It is however not needed to always clone all the data. If a node for, example on
 <p>The full documentation and migration instructions from the deprecated <code>this.helpers.request</code> can be found <a href="/integrations/creating-nodes/code/http-helpers/">here</a>.</p>
 <p>That is using the npm package <a href="https://github.com/request/request-promise-native"><code>request-promise-native</code></a> which is the basic npm <code>request</code> module but with promises. For a full set of <code>options</code> consider looking at <a href="https://github.com/request/request#requestoptions-callback">the underlying <code>request</code> options documentation</a>.</p>
 <h2 id="reuse-parameter-names">Reuse parameter names<a class="headerlink" href="#reuse-parameter-names" title="Permanent link">#</a></h2>
-<p>When a node can perform multiple operations like edit and delete some kind of entity, for both operations, it would need an entity-id. Do not call them "editId" and "deleteId", call them "id". n8n can handle multiple parameters with the same name without a problem as long as only one is visible. To make sure that is the case, the "displayOptions" can be used. By keeping the same name, the value can be kept if a user switches the operation from "edit" to "delete".</p>
+<p>When a node can perform multiple operations like edit and delete some kind of entity, for both operations, it would need an entity-id. Do not call them "editId" and "deleteId", call them "id". Doc² can handle multiple parameters with the same name without a problem as long as only one is visible. To make sure that is the case, the "displayOptions" can be used. By keeping the same name, the value can be kept if a user switches the operation from "edit" to "delete".</p>
 <h2 id="create-an-additional-fields-parameter">Create an 'Additional Fields' parameter<a class="headerlink" href="#create-an-additional-fields-parameter" title="Permanent link">#</a></h2>
 <p>Some nodes may need a lot of options. Add only the very important ones to the top level and for all others, create an 'Additional Fields' parameter where they can be added if needed. This ensures that the interface stays clean and does not unnecessarily confuse people. A good example of that would be the XML node.</p>
 <h2 id="follow-existing-parameter-naming-guideline">Follow existing parameter naming guideline<a class="headerlink" href="#follow-existing-parameter-naming-guideline" title="Permanent link">#</a></h2>

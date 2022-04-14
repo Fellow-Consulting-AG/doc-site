@@ -1481,7 +1481,7 @@
   
     <li class="md-nav__item">
       <a href="../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9913,7 +9913,7 @@
 
 <h1 id="looping-in-n8n">Looping in n8n<a class="headerlink" href="#looping-in-n8n" title="Permanent link">#</a></h1>
 <p>Looping enables you to repeatedly perform the same actions, stopping only after a set number of repetitions (e.g. fetch the 10 most recent items) or when a specific condition is met (e.g. no new items exist).</p>
-<p>Looping is useful when you want to process multiple similar items, for example sending a message to every contact in your address book. In n8n this repetitive processing is handled automatically, meaning you do not need to specifically build loops into your workflows. There are some <a href="#node-exceptions">special cases</a> where this isn’t true.</p>
+<p>Looping is useful when you want to process multiple similar items, for example sending a message to every contact in your address book. In Doc² this repetitive processing is handled automatically, meaning you do not need to specifically build loops into your workflows. There are some <a href="#node-exceptions">special cases</a> where this isn’t true.</p>
 <h2 id="using-loops-in-n8n">Using loops in n8n<a class="headerlink" href="#using-loops-in-n8n" title="Permanent link">#</a></h2>
 <p>n8n nodes take any number of items as input, process these items, and output the results. You can think of each item as a single data point (or a single row in the output table of a node).</p>
 <p>The following image shows the output from the <a href="/integrations/nodes/n8n-nodes-base.n8nTrainingCustomerDatastore/">Customer Datastore</a> node, where each row is an individual item.</p>
@@ -9922,7 +9922,7 @@
 <p>This is how you can process multiple items without having to explicitly connect nodes in a loop.</p>
 <div class="admonition note">
 <p class="admonition-title"> Keep in mind</p>
-<p>Your data must be in the proper structure for n8n to process it as described here. See <a href="/data/transforming-data/">Transforming Data</a> to learn more.</p>
+<p>Your data must be in the proper structure for Doc² to process it as described here. See <a href="/data/transforming-data/">Transforming Data</a> to learn more.</p>
 </div>
 <h3 id="executing-nodes-once">Executing nodes once<a class="headerlink" href="#executing-nodes-once" title="Permanent link">#</a></h3>
 <p>For situations where you do not want a node to process all received items, for example sending a Slack message only to the first customer, you can do so by toggling the <strong>Execute Once</strong> parameter in the <em>Settings</em> tab of that node.</p>
@@ -9940,8 +9940,8 @@
 <p>When you have a loop in a workflow, the node gets executed multiple times. The number on the node will represent the total number of executions:</p>
 <p><img alt="Number of executions of a node in a loop" src="/_images/flow-logic/looping/loop_executions.png" /></p>
 <h2 id="creating-loops">Creating loops<a class="headerlink" href="#creating-loops" title="Permanent link">#</a></h2>
-<p>As discussed above, n8n typically handles the iteration for all incoming items. However, there are certain scenarios where you will have to create a loop to iterate through all items. You can learn more about these <a href="#node-exceptions">here</a>.</p>
-<p>To create a loop in an n8n workflow, connect the output of one node to the input of a previous node. Make sure you add an <a href="/integrations/core-nodes/n8n-nodes-base.if/">IF</a> node to check when to stop the loop. You now have a loop that iterates over each item.</p>
+<p>As discussed above, Doc² typically handles the iteration for all incoming items. However, there are certain scenarios where you will have to create a loop to iterate through all items. You can learn more about these <a href="#node-exceptions">here</a>.</p>
+<p>To create a loop in an Doc² workflow, connect the output of one node to the input of a previous node. Make sure you add an <a href="/integrations/core-nodes/n8n-nodes-base.if/">IF</a> node to check when to stop the loop. You now have a loop that iterates over each item.</p>
 <p>Here is an <a href="https://n8n.io/workflows/1130">example workflow</a> that implements a loop with an <code>IF</code> node:</p>
 <p><img alt="Editor UI view of sample workflow" src="/_images/flow-logic/looping/example_workflow.png" /></p>
 <p>You should use the <a href="/integrations/core-nodes/n8n-nodes-base.splitInBatches/">Split In Batches</a> node when you want to batch the data in groups and process these batches. This approach is useful for avoiding API rate limits when processing large incoming data or when you only want to process a specific group of returned items.</p>

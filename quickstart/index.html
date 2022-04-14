@@ -1459,7 +1459,7 @@
   
     <li class="md-nav__item">
       <a href="../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9870,7 +9870,7 @@
 
 
 <h1 id="try-it-out">Try it out<a class="headerlink" href="#try-it-out" title="Permanent link">#</a></h1>
-<p>This page will help you get up and running with n8n, taking you from installation to building and executing your first workflow.</p>
+<p>This page will help you get up and running with Doc², taking you from installation to building and executing your first workflow.</p>
 <p>To ensure you can follow along with the steps below, be sure to first:</p>
 <ul>
 <li>Download and install <a href="https://docs.docker.com/get-docker/">Docker Desktop</a><ul>
@@ -9880,33 +9880,33 @@
 <li><a href="https://discord.com/register">Register</a> for a Discord account</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title"> n8n desktop app</p>
+<p class="admonition-title"> Doc² desktop app</p>
 <p>Install our <a href="/hosting/installation/desktop-app/">desktop app</a> if you want to start faster and skip a technical setup. </p>
 </div>
 <h2 id="install-n8n">Install n8n<a class="headerlink" href="#install-n8n" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p>Now that your have Docker installed, let's start by pulling the latest n8n image. Open your Terminal window and run:
+<p>Now that your have Docker installed, let's start by pulling the latest Doc² image. Open your Terminal window and run:
     <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>docker pull n8nio/n8n
 </code></pre></div>
 </td></tr></table></p>
 <p><img alt="Terminal window for Docker pull command" src="/_images/quickstart/docker_pull.png" /></p>
 </li>
 <li>
-<p>Open the Docker Desktop application and select <strong>Images</strong> from the left-hand pane. The n8n image downloaded above should be visible here:</p>
+<p>Open the Docker Desktop application and select <strong>Images</strong> from the left-hand pane. The Doc² image downloaded above should be visible here:</p>
 <p><img alt="Docker Desktop images view" src="/_images/quickstart/docker_desktop_image.png" /></p>
 </li>
 <li>
 <p>Click <strong>Run</strong> and a modal window appears with some <strong>Optional Settings</strong>:</p>
 <ul>
-<li><strong>Container Name</strong>: Enter a name for your n8n container. If left blank Docker will generate a random name for you.</li>
+<li><strong>Container Name</strong>: Enter a name for your Doc² container. If left blank Docker will generate a random name for you.</li>
 <li><strong>Ports</strong><ul>
-<li><strong>Local Host</strong>: Enter <code>5678</code>. This is the port on your local machine where n8n will be available once running.</li>
+<li><strong>Local Host</strong>: Enter <code>5678</code>. This is the port on your local machine where Doc² will be available once running.</li>
 <li><strong>Container Port</strong>: The default container port for n8n. Cannot be edited.</li>
 </ul>
 </li>
 <li><strong>Volumes</strong>:<ul>
-<li><strong>Host Path</strong>: Select a local directory that will be available to your n8n Docker application. Here we use a folder <code>n8n</code> located on the <code>/Desktop</code>.</li>
+<li><strong>Host Path</strong>: Select a local directory that will be available to your Doc² Docker application. Here we use a folder <code>n8n</code> located on the <code>/Desktop</code>.</li>
 <li><strong>Container Path</strong>: Provide the path of that directory where it will be accessible from inside the Docker container. Here we use <code>/n8n</code>.</li>
 </ul>
 </li>
@@ -9914,10 +9914,10 @@
 <p><img alt="Docker optional settings" src="/_images/quickstart/image_settings.png" /></p>
 </li>
 <li>
-<p>Click <strong>Run</strong> to start your n8n container. </p>
+<p>Click <strong>Run</strong> to start your Doc² container. </p>
 </li>
 </ol>
-<p>You can now access n8n by navigating your browser to <code>localhost:5678</code>.</p>
+<p>You can now access Doc² by navigating your browser to <code>localhost:5678</code>.</p>
 <h2 id="build-your-first-workflow">Build your first workflow<a class="headerlink" href="#build-your-first-workflow" title="Permanent link">#</a></h2>
 <p>For your first workflow, let's build something to take one tedious task off you plate: cleaning up a cluttered Gmail inbox.</p>
 <div class="admonition note">
@@ -9934,7 +9934,7 @@
     <img alt="Gmail configuration modal" src="/_images/quickstart/gmail_config.png" /></p>
 </li>
 <li>
-<p>The first thing you need to do is configure your credentials so that n8n can communicate with your Gmail account. You'll notice that the <em>OAuth2</em> method is selected by default for <em>Authentication</em>, so click the <em>Credentials</em> dropdown and select <strong>Create New</strong>. The new credentials modal appears:
+<p>The first thing you need to do is configure your credentials so that Doc² can communicate with your Gmail account. You'll notice that the <em>OAuth2</em> method is selected by default for <em>Authentication</em>, so click the <em>Credentials</em> dropdown and select <strong>Create New</strong>. The new credentials modal appears:
     <img alt="New Credentials modal" src="/_images/quickstart/credentials_modal.png" /></p>
 </li>
 <li>
@@ -9952,11 +9952,11 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title"> Keep in mind</p>
-<p>We go through a quick credential flow for Google in this example, but you can learn all about n8n credentials for Google services <a href="/integrations/credentials/google/">here</a>.</p>
+<p>We go through a quick credential flow for Google in this example, but you can learn all about Doc² credentials for Google services <a href="/integrations/credentials/google/">here</a>.</p>
 </div>
 </li>
 <li>
-<p>Return to your n8n tab and in the new credentials modal enter the <em>Client ID</em> and <em>Client Secret</em> obtained from your Google Cloud Console. A <em>Sign in with Google</em> button appears.
+<p>Return to your Doc² tab and in the new credentials modal enter the <em>Client ID</em> and <em>Client Secret</em> obtained from your Google Cloud Console. A <em>Sign in with Google</em> button appears.
     <img alt="Gmail Credentials modal" src="/_images/quickstart/credentials_modal2.png" /></p>
 </li>
 <li>
@@ -9999,7 +9999,7 @@
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">#</a></h2>
 <p>Do you enjoy automating workflows? Here's what you can do next:</p>
 <ul>
-<li>See all n8n <a href="/integrations/">nodes</a> and try out new workflows.</li>
+<li>See all Doc² <a href="/integrations/">nodes</a> and try out new workflows.</li>
 <li>Check out the <a href="/hosting/">hosting</a> section to learn more about options for installing and running n8n.</li>
 <li>Read our <a href="https://n8n.io/blog/">blog</a> and discover what others are doing with n8n.</li>
 </ul>

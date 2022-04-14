@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9817,9 +9817,9 @@
   <h1>Security</h1>
 
 <h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h2>
-<p>By default, n8n can be accessed by everybody. This is okay if you only have it running
+<p>By default, Doc² can be accessed by everybody. This is okay if you only have it running
 locally but if you deploy it on a server which is accessible from the web, you have
-to make sure that n8n is protected.</p>
+to make sure that Doc² is protected.</p>
 <h3 id="basic-auth">Basic auth<a class="headerlink" href="#basic-auth" title="Permanent link">#</a></h3>
 <p>Right now we have very basic protection in place using basic-auth. It can be activated
 by setting the following environment variables:</p>
@@ -9831,7 +9831,7 @@ by setting the following environment variables:</p>
 </code></pre></div>
 </td></tr></table>
 <h3 id="jwt">JWT<a class="headerlink" href="#jwt" title="Permanent link">#</a></h3>
-<p>There is also limited support for JWT based authentication. If enabled, n8n will verify the token with the provided JSON Web Key Set URI. It can be configured through the following environment variables:</p>
+<p>There is also limited support for JWT based authentication. If enabled, Doc² will verify the token with the provided JSON Web Key Set URI. It can be configured through the following environment variables:</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">N8N_JWT_AUTH_ACTIVE</span><span class="o">=</span><span class="nb">true</span>

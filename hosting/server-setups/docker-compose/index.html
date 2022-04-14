@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9907,7 +9907,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Type: A
-Name: n8n (or the desired subdomain)
+Name: Doc² (or the desired subdomain)
 IP address: &lt;IP_OF_YOUR_SERVER&gt;
 </code></pre></div>
 </td></tr></table>
@@ -10026,15 +10026,15 @@ IP address: &lt;IP_OF_YOUR_SERVER&gt;
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DATA_FOLDER}/.n8n:/home/node/.n8n</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>If you are planning on reading/writing local files with n8n (for example, by using the <a href="/integrations/core-nodes/n8n-nodes-base.writeBinaryFile/"><em>Write Binary File</em> node</a>, you will need to configure a data directory for those files here. If you are running n8n as a root user, add this under <code>volumes</code> for the n8n service:</p>
+<p>If you are planning on reading/writing local files with Doc² (for example, by using the <a href="/integrations/core-nodes/n8n-nodes-base.writeBinaryFile/"><em>Write Binary File</em> node</a>, you will need to configure a data directory for those files here. If you are running Doc² as a root user, add this under <code>volumes</code> for the Doc² service:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/local-files:/files</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>If you are running n8n as a non-root user, add this under <code>volumes</code> for the n8n service:</p>
+<p>If you are running Doc² as a non-root user, add this under <code>volumes</code> for the Doc² service:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/&lt;YOUR USERNAME&gt;/n8n-local-files:/files</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>You will now be able to write files to the <code>/files</code> directory in n8n and they will appear on your server in either <code>/local-files</code> or <code>/home/&lt;YOUR USERNAME&gt;/n8n-local-files</code>, respectively.</p>
+<p>You will now be able to write files to the <code>/files</code> directory in Doc² and they will appear on your server in either <code>/local-files</code> or <code>/home/&lt;YOUR USERNAME&gt;/n8n-local-files</code>, respectively.</p>
 <h3 id="6-create-env-file">6. Create <code>.env</code> file<a class="headerlink" href="#6-create-env-file" title="Permanent link">#</a></h3>
 <p>Create an <code>.env</code> file and change it accordingly.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -10069,7 +10069,7 @@ IP address: &lt;IP_OF_YOUR_SERVER&gt;
 <span class="c1"># The subdomain to serve from</span>
 <span class="nv">SUBDOMAIN</span><span class="o">=</span>n8n
 
-<span class="c1"># DOMAIN_NAME and SUBDOMAIN combined decide where n8n will be reachable from</span>
+<span class="c1"># DOMAIN_NAME and SUBDOMAIN combined decide where Doc² will be reachable from</span>
 <span class="c1"># above example would result in: https://n8n.example.com</span>
 
 <span class="c1"># The user name to use for authentication - IMPORTANT ALWAYS CHANGE!</span>
