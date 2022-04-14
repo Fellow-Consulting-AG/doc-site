@@ -1,8 +1,8 @@
-name: sample-html
+name: Doc
 static_sites:
 - environment_slug: html
   github:
     branch: main
     deploy_on_push: true
-    repo: digitalocean/sample-html
-  name: sample-html
+    repo: Fellow-Consulting-AG/doc-site
+  name: Doc
