@@ -1,0 +1,8 @@
+name: Doc
+static_sites:
+- environment_slug: html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: Fellow-Consulting-AG/doc-site
+  name: Doc
