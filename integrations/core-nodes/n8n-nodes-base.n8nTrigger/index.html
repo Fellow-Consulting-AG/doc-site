@@ -13,7 +13,7 @@
     
     
       
-        <title>n8n Trigger - Doc² Documentation</title>
+        <title>Doc² Trigger - Doc² Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#n8n-trigger" class="md-skip">
+        <a href="#doc2-trigger" class="md-skip">
           Skip to content
         </a>
       
@@ -1415,12 +1415,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          n8n Trigger
+          Doc² Trigger
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        n8n Trigger
+        Doc² Trigger
       </a>
       
         
@@ -1454,8 +1454,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-n8n-trigger-node" class="md-nav__link">
-    1. n8n Trigger node
+  <a href="#1-doc2-trigger-node" class="md-nav__link">
+    1. Doc² Trigger node
   </a>
   
 </li>
@@ -9865,8 +9865,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-n8n-trigger-node" class="md-nav__link">
-    1. n8n Trigger node
+  <a href="#1-doc2-trigger-node" class="md-nav__link">
+    1. Doc² Trigger node
   </a>
   
 </li>
@@ -9897,28 +9897,28 @@
                 
 
 
-<h1 id="n8n-trigger">n8n Trigger<a class="headerlink" href="#n8n-trigger" title="Permanent link">#</a></h1>
-<p>The n8n Trigger node gets triggered when the n8n instance is started or restarted. The n8n Trigger node can be used to notify when the n8n instance starts.</p>
+<h1 id="doc2-trigger">Doc² Trigger<a class="headerlink" href="#doc2-trigger" title="Permanent link">#</a></h1>
+<p>The Doc² Trigger node gets triggered when the Doc² instance is started or restarted. The Doc² Trigger node can be used to notify when the Doc² instance starts.</p>
 <h2 id="node-reference">Node Reference<a class="headerlink" href="#node-reference" title="Permanent link">#</a></h2>
 <ul>
 <li>Events<ul>
-<li><strong><em>Instance started:</em></strong> Triggers when the n8n instance is started or restarted</li>
+<li><strong><em>Instance started:</em></strong> Triggers when the Doc² instance is started or restarted</li>
 </ul>
 </li>
 </ul>
 <h2 id="example-usage">Example Usage<a class="headerlink" href="#example-usage" title="Permanent link">#</a></h2>
-<p>This workflow allows you to receive a message on Mattermost when your n8n instance starts. You can also find the <a href="https://n8n.io/workflows/1058">workflow</a> on n8n.io. This example usage workflow uses the following nodes.
+<p>This workflow allows you to receive a message on Mattermost when your Doc² instance starts. You can also find the <a href="https://n8n.io/workflows/1058">workflow</a> on n8n.io. This example usage workflow uses the following nodes.
 - <a href="">n8n Trigger</a>
 - <a href="/integrations/nodes/n8n-nodes-base.mattermost/">Mattermost</a></p>
 <p>The final workflow should look like the following image.</p>
 <p><img alt="A workflow with the Webhook node" src="/_images/integrations/core-nodes/n8ntrigger/workflow.png" /></p>
-<h3 id="1-n8n-trigger-node">1. n8n Trigger node<a class="headerlink" href="#1-n8n-trigger-node" title="Permanent link">#</a></h3>
-<p>The n8n Trigger node will trigger the workflow whenever n8n starts.</p>
+<h3 id="1-doc2-trigger-node">1. Doc² Trigger node<a class="headerlink" href="#1-doc2-trigger-node" title="Permanent link">#</a></h3>
+<p>The Doc² Trigger node will trigger the workflow whenever Doc² starts.</p>
 <ol>
 <li>Select 'Instance started' from the <strong><em>Events</em></strong> dropdown list.</li>
 </ol>
-<p>In the screenshot below, you will notice that the node triggers the workflow when the n8n instance starts.</p>
-<p><img alt="Using the n8n Trigger node to trigger the workflow" src="/_images/integrations/core-nodes/n8ntrigger/n8ntrigger_node.png" /></p>
+<p>In the screenshot below, you will notice that the node triggers the workflow when the Doc² instance starts.</p>
+<p><img alt="Using the Doc² Trigger node to trigger the workflow" src="/_images/integrations/core-nodes/n8ntrigger/n8ntrigger_node.png" /></p>
 <h3 id="2-mattermost-node-post-message">2. Mattermost node (post: message)<a class="headerlink" href="#2-mattermost-node-post-message" title="Permanent link">#</a></h3>
 <p>This node will send a message in the <code>workflow</code> channel on Mattermost.</p>
 <ol>
@@ -9928,7 +9928,7 @@
 <p>Click on the gears icon next to the <strong><em>Message</em></strong> field click on <strong><em>Add Expression</em></strong>.</p>
 </li>
 <li>
-<p>Enter the following message in the <strong><em>Expression</em></strong> field: <code>Your n8n instance started at {{$json["timestamp"]}}.</code>.</p>
+<p>Enter the following message in the <strong><em>Expression</em></strong> field: <code>Your Doc² instance started at {{$json["timestamp"]}}.</code>.</p>
 </li>
 <li>Click on <strong><em>Execute Node</em></strong> to run the workflow.</li>
 </ol>
@@ -9936,7 +9936,7 @@
 <p><img alt="Using the Mattermost node to send a message to a channel" src="/_images/integrations/core-nodes/n8ntrigger/mattermost_node.png" /></p>
 <div class="admonition note">
 <p class="admonition-title"> Activate workflow for production</p>
-<p>This example workflow uses the n8n Trigger node, which is a Trigger node. You'll need to save the workflow and then click on the Activate toggle on the top right of the screen to activate the workflow.</p>
+<p>This example workflow uses the Doc² Trigger node, which is a Trigger node. You'll need to save the workflow and then click on the Activate toggle on the top right of the screen to activate the workflow.</p>
 </div>
 
               

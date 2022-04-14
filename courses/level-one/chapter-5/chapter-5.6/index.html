@@ -1402,7 +1402,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9847,14 +9847,14 @@
 
 <h1 id="6-notifying-the-team">6. Notifying the Team<a class="headerlink" href="#6-notifying-the-team" title="Permanent link">#</a></h1>
 <p>In this step of the workflow you will learn how to send messages to a Discord channel using the <em>Discord</em> node.</p>
-<p>Now that you have a calculated summary of the booked orders you need to notify Nathan’s team in their Discord channel. n8n has a <strong>Discord node</strong> that allows you to send messages. We'll be sending the messages to the <a href="https://discord.gg/G98WXzsjky">n8n server</a> on Discord.</p>
+<p>Now that you have a calculated summary of the booked orders you need to notify Nathan’s team in their Discord channel. Doc² has a <strong>Discord node</strong> that allows you to send messages. We'll be sending the messages to the <a href="https://discord.gg/G98WXzsjky">n8n server</a> on Discord.</p>
 <div class="admonition note">
 <p class="admonition-title"> Communication nodes</p>
-<p>You can replace the <em>Discord</em> node with another communication app. For example, n8n also has nodes for <a href="/integrations/nodes/n8n-nodes-base.slack/"><em>Slack</em></a> and <a href="/integrations/nodes/n8n-nodes-base.mattermost/"><em>Mattermost</em></a>.</p>
+<p>You can replace the <em>Discord</em> node with another communication app. For example, Doc² also has nodes for <a href="/integrations/nodes/n8n-nodes-base.slack/"><em>Slack</em></a> and <a href="/integrations/nodes/n8n-nodes-base.mattermost/"><em>Mattermost</em></a>.</p>
 </div>
 <p>In your workflow, add a <em>Discord</em> node connected to the <em>Function</em> node. In the <em>Discord</em> node window, configure the parameters:</p>
 <ul>
-<li><em>Webhook URL:</em> Enter the URL that you received in the email from n8n when you signed up for this course.</li>
+<li><em>Webhook URL:</em> Enter the URL that you received in the email from Doc² when you signed up for this course.</li>
 <li><em>Text (Expression):</em> <code>This week we have {{$json["totalBooked"]}} booked orders with a total value of {{$json["bookedSum"]}}. My Unique ID: {{$node["HTTP Request"].parameter["headerParametersUi"]["parameter"][0]["value"]}}</code></li>
 </ul>
 <figure><img src="/_images/courses/level-one/chapter-two/Discord-node.png" alt="Discord node expression" style="width:100%"><figcaption align = "center"><i>Discord node expression</i></figcaption></figure>

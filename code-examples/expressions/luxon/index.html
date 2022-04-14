@@ -1504,7 +1504,7 @@
   
     <li class="md-nav__item">
       <a href="../../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9984,10 +9984,10 @@
 </code></pre></div>
 </td></tr></table>
 <h2 id="setting-the-timezone-in-n8n">Setting the timezone in n8n<a class="headerlink" href="#setting-the-timezone-in-n8n" title="Permanent link">#</a></h2>
-<p>Luxon uses the n8n timezone. This value is either:</p>
+<p>Luxon uses the Doc² timezone. This value is either:</p>
 <ul>
 <li>Default: <code>America/New York</code></li>
-<li>A custom timezone for your n8n instance, set using the <code>GENERIC_TIMEZONE</code> environment variable.</li>
+<li>A custom timezone for your Doc² instance, set using the <code>GENERIC_TIMEZONE</code> environment variable.</li>
 <li>A custome timezone for an individual workflow, configured in workflow settings.</li>
 </ul>
 <h2 id="common-tasks">Common tasks<a class="headerlink" href="#common-tasks" title="Permanent link">#</a></h2>
@@ -10053,7 +10053,7 @@
 <li><code>$today.diff()</code>: This is similar to the example in <a href="#get-the-time-between-two-dates">Get the time between two dates</a>, but it uses n8n's custom <code>$today</code> variable.</li>
 <li><code>DateTime.fromISO($today.year + '-12-25'), 'days'</code>: this part gets the current year using <code>$today.year</code>, turns it into an ISO string along with the month and date, and then takes the whole ISO string and converts it to a Luxon DateTime data structure. It also tells Luxon that you want the duration in days.</li>
 <li><code>toObject()</code> turns the result of diff() into a more usable object. At this point, the expression returns <code>[Object: {"days":-&lt;number-of-days&gt;}]</code>. For example, on 9th March, <code>[Object: {"days":-291}]</code>.</li>
-<li><code>.days</code> uses JMESPath syntax to retrieve just the number of days from the object. For more information on using JMESPath with n8n, refer to our <a href="/code-examples/expressions/jmespath/">JMESpath</a> documentation. This gives you the number of days to Christmas, as a negative number.</li>
+<li><code>.days</code> uses JMESPath syntax to retrieve just the number of days from the object. For more information on using JMESPath with Doc², refer to our <a href="/code-examples/expressions/jmespath/">JMESpath</a> documentation. This gives you the number of days to Christmas, as a negative number.</li>
 <li><code>.toString().substring(1)</code> turns the number into a string and removes the <code>-</code>.</li>
 <li><code>+ " days to Christmas!"</code>: another string, with a <code>+</code> to join it to the previous string.</li>
 <li><code>}}</code>: indicates the end of the expression.</li>

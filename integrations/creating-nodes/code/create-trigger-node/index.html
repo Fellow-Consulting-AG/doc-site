@@ -1404,7 +1404,7 @@
   
     <li class="md-nav__item">
       <a href="../../../core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9425,15 +9425,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#n8n-persists-all-the-webhooks-defined-in-descriptionwebhooks" class="md-nav__link">
-    n8n persists all the webhooks defined in description.webhooks
+  <a href="#doc2-persists-all-the-webhooks-defined-in-descriptionwebhooks" class="md-nav__link">
+    Doc² persists all the webhooks defined in description.webhooks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#n8n-executes-the-life-cycle-methods" class="md-nav__link">
-    n8n executes the life cycle methods
+  <a href="#doc2-executes-the-life-cycle-methods" class="md-nav__link">
+    Doc² executes the life cycle methods
   </a>
   
 </li>
@@ -9998,15 +9998,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#n8n-persists-all-the-webhooks-defined-in-descriptionwebhooks" class="md-nav__link">
-    n8n persists all the webhooks defined in description.webhooks
+  <a href="#doc2-persists-all-the-webhooks-defined-in-descriptionwebhooks" class="md-nav__link">
+    Doc² persists all the webhooks defined in description.webhooks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#n8n-executes-the-life-cycle-methods" class="md-nav__link">
-    n8n executes the life cycle methods
+  <a href="#doc2-executes-the-life-cycle-methods" class="md-nav__link">
+    Doc² executes the life cycle methods
   </a>
   
 </li>
@@ -10095,11 +10095,11 @@ npm -v
 <li>editor-ui</li>
 <li>nodes-base</li>
 </ul>
-<p>All these packages are under the <code>/packages</code> folder in the main n8n folder. We will be working in the <code>nodes-base</code> folder as it contains everything related to nodes. Specifically, <code>/packages/nodes-base/nodes</code>, <code>packages/nodes-base/credentials</code>, and <code>packages/nodes-base/package.json</code>.</p>
+<p>All these packages are under the <code>/packages</code> folder in the main Doc² folder. We will be working in the <code>nodes-base</code> folder as it contains everything related to nodes. Specifically, <code>/packages/nodes-base/nodes</code>, <code>packages/nodes-base/credentials</code>, and <code>packages/nodes-base/package.json</code>.</p>
 <ul>
 <li>The folder <code>nodes</code>, contains all the nodes in n8n.</li>
 <li>The folder <code>credentials</code> contains all the credentials that the different nodes use. Each node can define multiple credentials. For example, OAuth2 or API Key. Each credential requires different parameters that the user will have to input. The credentials data that the user provides is stored in an encrypted format in n8n's database.</li>
-<li>The file <code>package.json</code> contains all the npm packages that the nodes use. It also contains all the nodes and credentials that are loaded when n8n is started.</li>
+<li>The file <code>package.json</code> contains all the npm packages that the nodes use. It also contains all the nodes and credentials that are loaded when Doc² is started.</li>
 </ul>
 <p><img alt="n8n folder structure" src="/_images/integrations/creating-nodes/code/n8n-folder-structure.png" /></p>
 <h2 id="creating-the-node">Creating the node<a class="headerlink" href="#creating-the-node" title="Permanent link">#</a></h2>
@@ -10240,7 +10240,7 @@ npm -v
 <li>Go to the project's main folder (n8n) in the terminal and run the following commands (it can take a few minutes).<ul>
 <li>The first command installs all dependencies of all the modules and links them together.</li>
 <li>The second command builds all the code.</li>
-<li>The third command starts n8n in development mode.</li>
+<li>The third command starts Doc² in development mode.</li>
 </ul>
 </li>
 </ol>
@@ -10257,19 +10257,19 @@ npm run dev
 </ol>
 <p><strong>Notes</strong></p>
 <ul>
-<li>On startup, n8n will load all the nodes and credentials (more about credentials later) that are registered in <code>/packages/nodes-base/package.json</code>.</li>
+<li>On startup, Doc² will load all the nodes and credentials (more about credentials later) that are registered in <code>/packages/nodes-base/package.json</code>.</li>
 <li>The property <code>description.name</code> uses camelCase.</li>
 <li>The property <code>description.color</code> is the company's branding color in hexadecimal. In case the website does not include this information, there are other websites that help you get a company’s branding colors. For example, <a href="https://brandpalettes.com/">brandpalettes.com</a>.</li>
 </ul>
 <h2 id="creating-the-ui-for-the-node">Creating the UI for the node<a class="headerlink" href="#creating-the-ui-for-the-node" title="Permanent link">#</a></h2>
-<p>Double-clicking on the Autofriend Trigger node will open the Node Editor View. It will be empty since we haven't added any UI components yet. Luckily, n8n provides predefined JSON-based UI components that we can use to ask the user for different types of data.</p>
+<p>Double-clicking on the Autofriend Trigger node will open the Node Editor View. It will be empty since we haven't added any UI components yet. Luckily, Doc² provides predefined JSON-based UI components that we can use to ask the user for different types of data.</p>
 <p>Autopilots's <a href="https://autopilot.docs.apiary.io/#reference/rest-hooks/register-rest-hook/register-a-rest-hook">docs</a> mention that to create a hook, we need to provide the following pieces of information:</p>
 <ul>
 <li>event - Required</li>
 <li>target_url - Required</li>
 </ul>
 <p>In the <code>event</code> parameter, we provide the name of the event for which we want to be notified. For example, <code>contact_added</code>. As the name implies, by providing <code>contact_added</code> as the event, we will be notified every time a contact is added to Autofriend.</p>
-<p>In the <code>target_url</code> parameter, we provide the URL where Autofriend will notify us when the event defined in the event parameter takes place. We don't need to ask the user for this parameter as n8n provides us with a method to obtain it.</p>
+<p>In the <code>target_url</code> parameter, we provide the URL where Autofriend will notify us when the event defined in the event parameter takes place. We don't need to ask the user for this parameter as Doc² provides us with a method to obtain it.</p>
 <h3 id="adding-the-fields">Adding the fields<a class="headerlink" href="#adding-the-fields" title="Permanent link">#</a></h3>
 <p>Let’s make the Node Editor View ask for these parameters:
 1. Add the following under <code>description.properties</code> in <code>packages/nodes-base/nodes/Autofriend/AutofriendTrigger.node.ts.</code>.</p>
@@ -10349,7 +10349,7 @@ npm run dev
 </code></pre></div>
 </td></tr></table>
 <ol>
-<li>Stop the current n8n process by pressing <code>ctrl + c</code> in the terminal in which you are running n8n.</li>
+<li>Stop the current Doc² process by pressing <code>ctrl + c</code> in the terminal in which you are running n8n.</li>
 <li>Run again, by entering the following in the terminal.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>npm run dev
 </code></pre></div>
@@ -10360,7 +10360,7 @@ npm run dev
 <p><img alt="Autofriend's required fields" src="/_images/integrations/creating-nodes/code/autofriend-fields.png" /></p>
 <h2 id="creating-the-ui-for-credentials">Creating the UI for credentials<a class="headerlink" href="#creating-the-ui-for-credentials" title="Permanent link">#</a></h2>
 <p>Most REST APIs use some sort of authentication mechanism. Autofriend's REST API uses API Keys. The API Key informs them about who is making the request to their system and gives you access to all the functionality that the API provides. Given all the things it can do, this has to be treated as a sensitive piece of information and should be kept private.</p>
-<p>n8n gives you the ability to ask for sensitive information using credentials. In the credentials, you can use all the generally available UI elements. Additionally, the data that is stored using the credentials would be encrypted before being saved to the database. In order to do that, n8n uses an encryption key.</p>
+<p>n8n gives you the ability to ask for sensitive information using credentials. In the credentials, you can use all the generally available UI elements. Additionally, the data that is stored using the credentials would be encrypted before being saved to the database. In order to do that, Doc² uses an encryption key.</p>
 <p>With that in mind, let’s create the UI to ask for the user’s Autofriend API Key. The process of creating and registering credentials is similar to that of creating and registering the node:</p>
 <ol>
 <li>Go to <code>packages/nodes-base/credentials</code>.</li>
@@ -10422,7 +10422,7 @@ npm run dev
 </code></pre></div>
 </td></tr></table>
 <ol>
-<li>Stop the current n8n process by pressing <code>ctrl + c</code> in the terminal in which you are running n8n.</li>
+<li>Stop the current Doc² process by pressing <code>ctrl + c</code> in the terminal in which you are running n8n.</li>
 <li>Run again, by entering the following in the terminal.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>npm run dev
 </code></pre></div>
@@ -10433,16 +10433,16 @@ npm run dev
 <p><img alt="Autofriend's credentials" src="/_images/integrations/creating-nodes/code/autofriend-credentials.png" /></p>
 <h2 id="understanding-the-life-cycle-for-the-webhook-method">Understanding the life cycle for the webhook method<a class="headerlink" href="#understanding-the-life-cycle-for-the-webhook-method" title="Permanent link">#</a></h2>
 <p>When a Trigger node is executed either in test or production mode, the following happens:</p>
-<h3 id="n8n-persists-all-the-webhooks-defined-in-descriptionwebhooks">n8n persists all the webhooks defined in description.webhooks<a class="headerlink" href="#n8n-persists-all-the-webhooks-defined-in-descriptionwebhooks" title="Permanent link">#</a></h3>
+<h3 id="doc2-persists-all-the-webhooks-defined-in-descriptionwebhooks">Doc² persists all the webhooks defined in description.webhooks<a class="headerlink" href="#doc2-persists-all-the-webhooks-defined-in-descriptionwebhooks" title="Permanent link">#</a></h3>
 <p>The persisted data will be used later to verify if the incoming requests to the n8n’s webhook endpoint are valid.</p>
 <p>The property webhooks implements the interface <strong>IWebhookDescription</strong>. The interface has four properties.</p>
 <ol>
-<li><strong>name:</strong> The property name where n8n will look for the life cycle methods.</li>
+<li><strong>name:</strong> The property name where Doc² will look for the life cycle methods.</li>
 <li><strong>httpMethod:</strong> The HTTP method.</li>
 <li><strong>responseMode:</strong> When the trigger will respond. When developing a trigger node, this property must be set to <code>onReceived</code>.</li>
 <li><strong>path:</strong> The path added to the base URL.</li>
 </ol>
-<p>For example, for a Trigger node with the following <code>webhooks</code> property, n8n will create the following webhooks URLs.</p>
+<p>For example, for a Trigger node with the following <code>webhooks</code> property, Doc² will create the following webhooks URLs.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -10467,11 +10467,11 @@ npm run dev
 <p>These URLs can be found in the node under the <code>Webhook URLs</code> label.</p>
 <p>These webhook URLs will be used as the notification URL (also known as the callback URL or target URL) when creating the webhook in the external system.</p>
 <p><strong>Note:</strong> In test mode, the webhooks are persisted in memory. In production mode, they are persisted in the database.</p>
-<h3 id="n8n-executes-the-life-cycle-methods">n8n executes the life cycle methods<a class="headerlink" href="#n8n-executes-the-life-cycle-methods" title="Permanent link">#</a></h3>
+<h3 id="doc2-executes-the-life-cycle-methods">Doc² executes the life cycle methods<a class="headerlink" href="#doc2-executes-the-life-cycle-methods" title="Permanent link">#</a></h3>
 <p>The life cycle methods allow us to create, delete, and check if the webhook exists in the external system.</p>
 <p><strong>Methods</strong></p>
 <ul>
-<li><code>checkExist</code>: This is the first method that gets called. It checks if the webhook with the current path is already registered in the external system or not. If the webhook is already registered, n8n persists the webhook ID. If the webhook is not registered with the external system, the <code>create</code> method gets executed.</li>
+<li><code>checkExist</code>: This is the first method that gets called. It checks if the webhook with the current path is already registered in the external system or not. If the webhook is already registered, Doc² persists the webhook ID. If the webhook is not registered with the external system, the <code>create</code> method gets executed.</li>
 <li><code>create</code>: This method gets called if the <code>checkExist</code> method returns false (if the webhook with the current path does not exist in the external system). This method registers the webhook in the external system and stores the webhook ID in n8n.</li>
 <li><code>delete</code>: This method gets called when the trigger is either stopped manually or when the workflow is deactivated. It uses the ID previously persisted by either the create or the checkExist method to delete the webhook from the external system.</li>
 </ul>
@@ -10688,8 +10688,8 @@ npm run dev
 </code></pre></div>
 </td></tr></table>
 4. In the same file, uncomment the code snippet on the top to import <code>autoFriendApiRequest</code> and <code>snakeCase</code>.
-5. Stop the current n8n process by pressing <code>ctrl + c</code> in the terminal where you are running n8n.
-6. Run the project using a tunnel by entering <code>./packages/cli/bin/n8n start --tunnel</code> in the terminal. Access the n8n Editor UI at <a href="http://localhost:5678/workflow">localhost:5678</a>.
+5. Stop the current Doc² process by pressing <code>ctrl + c</code> in the terminal where you are running n8n.
+6. Run the project using a tunnel by entering <code>./packages/cli/bin/n8n start --tunnel</code> in the terminal. Access the Doc² Editor UI at <a href="http://localhost:5678/workflow">localhost:5678</a>.
 7. Enter the API key in the credentials. Instructions to find the API Key can be found <a href="../credentials/autopilot">here</a>.
 8. Go to the workflow editor, save your workflow, and execute the node.</p>
 <p><img alt="Executed node" src="/_images/integrations/creating-nodes/code/executed-node.png" /></p>
@@ -10699,11 +10699,11 @@ npm run dev
 <p><img alt="Executed node with results" src="/_images/integrations/creating-nodes/code/executed-node-with-results.png" /></p>
 <p>The trigger node is now receiving events. Sometimes it might take a bit longer for the payload to arrive.</p>
 <p>You probably noticed that this time we did not run the project using <code>npm run dev</code>, but instead using <code>./packages/cli/bin/n8n start --tunnel</code>.</p>
-<p>Since our server is running locally, we need a tool that lets us proxy all requests to our local machine so that n8n receives and handles the events from the external service (Autopilot). This gets achieved using a tunnel. The details on how a tunnel works are out of the scope of this tutorial. If you want to know about it, you can check this <a href="http://localtunnel.github.io/www/">link</a>. Keep in mind that the tunnel is meant for development purposes only and should not be used in production.</p>
+<p>Since our server is running locally, we need a tool that lets us proxy all requests to our local machine so that Doc² receives and handles the events from the external service (Autopilot). This gets achieved using a tunnel. The details on how a tunnel works are out of the scope of this tutorial. If you want to know about it, you can check this <a href="http://localtunnel.github.io/www/">link</a>. Keep in mind that the tunnel is meant for development purposes only and should not be used in production.</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
 <p>In this tutorial, we implemented one functionality of the Autofriend webhook API. We made the node show up in the Editor UI and in the Create Node menu with Autofriend's branding. Then, we added the fields necessary to create a webhook in the external service. We also added the credentials so that the API Key could be stored safely. Finally, we mapped all the parameters to the Autofriend API.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
-<p>Once you have created the node and want to contribute to n8n, please check the <a href="/integrations/creating-nodes/code/node-review-checklist/">Node Review Checklist</a>. Make sure you complete the checklist before creating a pull request.</p>
+<p>Once you have created the node and want to contribute to Doc², please check the <a href="/integrations/creating-nodes/code/node-review-checklist/">Node Review Checklist</a>. Make sure you complete the checklist before creating a pull request.</p>
 
               
             </article>

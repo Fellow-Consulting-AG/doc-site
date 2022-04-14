@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9907,10 +9907,10 @@
 
 
 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h1>
-<p>It is possible to change some of the n8n defaults via special environment variables.</p>
+<p>It is possible to change some of the Doc² defaults via special environment variables.</p>
 <p>For a full list of available configurations see <a href="/hosting/environment-variables/">Environment Variables</a>.</p>
 <h2 id="how-to-set">How to set<a class="headerlink" href="#how-to-set" title="Permanent link">#</a></h2>
-<p>Where you set these environment variables depends on how you are <a href="/">running</a> n8n, via npm or Docker.</p>
+<p>Where you set these environment variables depends on how you are <a href="/">running</a> Doc², via npm or Docker.</p>
 <h3 id="npm">npm<a class="headerlink" href="#npm" title="Permanent link">#</a></h3>
 <p>For npm, set your desired environment variables in Terminal using the <code>export</code> command as shown below:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> &lt;variable&gt;<span class="o">=</span>&lt;value&gt;
@@ -9937,7 +9937,7 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>docker run -it --rm <span class="se">\</span>
-    --name n8n <span class="se">\</span>
+    --name Doc² <span class="se">\</span>
     -p <span class="m">5678</span>:5678 <span class="se">\</span>
     -e <span class="nv">N8N_BASIC_AUTH_ACTIVE</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="se">\</span>
     -e <span class="nv">N8N_BASIC_AUTH_USER</span><span class="o">=</span><span class="s2">&quot;&lt;user&gt;&quot;</span> <span class="se">\</span>
@@ -9946,7 +9946,7 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="configuration-via-file">Configuration via file<a class="headerlink" href="#configuration-via-file" title="Permanent link">#</a></h3>
-<p>It is also possible to configure n8n using a configuration file.</p>
+<p>It is also possible to configure Doc² using a configuration file.</p>
 <p>Only the values that should be different from the default need to be defined in your configuration file. If needed multiple files can also be supplied. For example, you can have some generic base settings and some specific ones depending on the environment.</p>
 <p>The path to the JSON configuration file to use can be set using the environment variable <code>N8N_CONFIG_FILES</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -10036,7 +10036,7 @@
 <h3 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title"> Keep in mind</p>
-<p>This variable only gets used when the <code>n8n-editor-ui</code> package gets built manually. Hence, it does not get used in combination with the default n8n docker image. By default, <code>/</code> gets used, meaning that it uses the root-domain.</p>
+<p>This variable only gets used when the <code>n8n-editor-ui</code> package gets built manually. Hence, it does not get used in combination with the default Doc² docker image. By default, <code>/</code> gets used, meaning that it uses the root-domain.</p>
 </div>
 <p>Tells the frontend how to reach the REST API of the backend.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VUE_APP_URL_BASE_API</span><span class="o">=</span>https://n8n.example.com/
@@ -10067,7 +10067,7 @@ workflows are not CPU intensive and they have to start very fast, it is possible
 </code></pre></div>
 </td></tr></table>
 <h3 id="custom-nodes-location">Custom nodes location<a class="headerlink" href="#custom-nodes-location" title="Permanent link">#</a></h3>
-<p>Every user can add custom nodes that get loaded by n8n on startup. The default
+<p>Every user can add custom nodes that get loaded by Doc² on startup. The default
 location is in the subfolder <code>.n8n/custom</code> of the user who started n8n.
 Additional folders can be defined with an environment variable.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">N8N_CUSTOM_EXTENSIONS</span><span class="o">=</span><span class="s2">&quot;/home/jim/n8n/custom-nodes;/data/n8n/nodes&quot;</span>
@@ -10123,8 +10123,8 @@ user-folder via an environment variable.</p>
 </td></tr></table>
 <h3 id="webhook-url">Webhook URL<a class="headerlink" href="#webhook-url" title="Permanent link">#</a></h3>
 <p>The webhook URL will normally be created automatically by combining
-<code>N8N_PROTOCOL</code>, <code>N8N_HOST</code> and <code>N8N_PORT</code>. However, if n8n runs behind a
-reverse proxy that would not work. That's because n8n runs internally
+<code>N8N_PROTOCOL</code>, <code>N8N_HOST</code> and <code>N8N_PORT</code>. However, if Doc² runs behind a
+reverse proxy that would not work. That's because Doc² runs internally
 on port 5678 but is exposed to the web via the reverse proxy on port 443. In
 that case, it is important to set the webhook URL manually so that it can be
 displayed correctly in the Editor UI and even more important is that the correct
@@ -10133,7 +10133,7 @@ webhook URLs get registred with the external services.</p>
 </code></pre></div>
 </td></tr></table>
 <h3 id="prometheus">Prometheus<a class="headerlink" href="#prometheus" title="Permanent link">#</a></h3>
-<p>In order to collect and expose metrics, n8n uses the <a href="https://www.npmjs.com/package/prom-client">prom-client</a> library.</p>
+<p>In order to collect and expose metrics, Doc² uses the <a href="https://www.npmjs.com/package/prom-client">prom-client</a> library.</p>
 <p>The <code>/metrics</code> endpoint is disabled by default, but it is possible to enable it using the <code>N8N_METRICS</code> environment variable.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">N8N_METRICS</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
@@ -10142,7 +10142,7 @@ webhook URLs get registred with the external services.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">N8N_METRICS_PREFIX</span><span class="o">=</span>n8n_
 </code></pre></div>
 </td></tr></table>
-<p><strong>Note:</strong> At the moment, n8n does not support metrics for webhooks.</p>
+<p><strong>Note:</strong> At the moment, Doc² does not support metrics for webhooks.</p>
 
               
             </article>

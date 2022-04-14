@@ -13,7 +13,7 @@
     
     
       
-        <title>n8n databases structure - Doc² Documentation</title>
+        <title>Doc² databases structure - Doc² Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#n8n-databases-structure" class="md-skip">
+        <a href="#doc2-databases-structure" class="md-skip">
           Skip to content
         </a>
       
@@ -1400,7 +1400,7 @@
   
     <li class="md-nav__item">
       <a href="../../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9824,10 +9824,10 @@
                 
 
 
-<h1 id="n8n-databases-structure">n8n databases structure<a class="headerlink" href="#n8n-databases-structure" title="Permanent link">#</a></h1>
-<p>By default, n8n uses SQLite as the database. If you are using another database it will be similar, but the data-types will be different depending on the database.</p>
+<h1 id="doc2-databases-structure">Doc² databases structure<a class="headerlink" href="#doc2-databases-structure" title="Permanent link">#</a></h1>
+<p>By default, Doc² uses SQLite as the database. If you are using another database it will be similar, but the data-types will be different depending on the database.</p>
 <p>The <a href="/reference/glossary/#credentials">credentials</a>, <a href="/reference/glossary/#workflow">workflows</a>, <a href="/reference/glossary/#execution">executions</a>, and <a href="/reference/glossary/#webhook">webhook</a> are decoupled and stored in different tables.</p>
-<p>To inspect the n8n database, you can use <a href="https://dbeaver.io">DBeaver</a>, which is an open-source universal database tool.</p>
+<p>To inspect the Doc² database, you can use <a href="https://dbeaver.io">DBeaver</a>, which is an open-source universal database tool.</p>
 <h2 id="credentials-entity">Credentials entity<a class="headerlink" href="#credentials-entity" title="Permanent link">#</a></h2>
 <p>Based on the node you use in a workflow, you may have to use credentials to connect the node with the respective service. These credentials get stored in the <code>credentials_entity</code> table with the following fields.</p>
 <table>
@@ -9876,7 +9876,7 @@
 </tr>
 </tbody>
 </table>
-<p>Below is an example of how n8n stores the credentials in the credentials_entity table in the SQLite database. The example below shows the data stored in the table for the <em>Pipedrive Trial</em> credentials.</p>
+<p>Below is an example of how Doc² stores the credentials in the credentials_entity table in the SQLite database. The example below shows the data stored in the table for the <em>Pipedrive Trial</em> credentials.</p>
 <p>The <strong><em>name</em></strong> field contains the credentials name, and the <strong><em>data</em></strong> field stores the credentials by encrypting them.
 The <a href="/integrations/credentials/pipedrive/">Pipedrive</a> node has two authentication methods - OAuth and Access Token. The <strong><em>type</em></strong> field indicates the method the credentials belong to. The <strong><em>nodeAccess</em></strong> field stores information about the nodes that have access to these credentials. In the example below, both the Pipedrive node and the Pipedrive Trigger node have access to the Pipedrive Trial credentials.</p>
 <p><img alt="Data stored in the credentials_entity table" src="/_images/hosting/databases/credentials_entity.png" /></p>
@@ -9943,11 +9943,11 @@ The <a href="/integrations/credentials/pipedrive/">Pipedrive</a> node has two au
 </tr>
 </tbody>
 </table>
-<p>Below is an example of how n8n stores the execution information in the <code>execution_entity</code> table in the SQLite database. The example below shows the execution data stored in the table for the <a href="https://n8n.io/workflows/880">Receive updates of the position of the ISS every minute</a> workflow.</p>
+<p>Below is an example of how Doc² stores the execution information in the <code>execution_entity</code> table in the SQLite database. The example below shows the execution data stored in the table for the <a href="https://n8n.io/workflows/880">Receive updates of the position of the ISS every minute</a> workflow.</p>
 <p>The <strong><em>data</em></strong> field contains the data returned by the nodes after the execution of the workflow. The <strong><em>finished</em></strong> field contains the value <code>1</code>, indicating that the execution got completed successfully. The example workflow uses a Trigger node to start the workflow. This information gets stored in the <strong><em>mode</em></strong> field. The <strong><em>workflowData</em></strong> field stores information about the workflow and static data. The <strong><em>workflowId</em></strong> field refers to the workflow that got executed.</p>
 <p><img alt="Data stored in the execution_entity table" src="/_images/hosting/databases/execution_entity.png" /></p>
 <h2 id="migrations">Migrations<a class="headerlink" href="#migrations" title="Permanent link">#</a></h2>
-<p><a href="https://github.com/typeorm/typeorm/blob/master/docs/migrations.md">Migration</a> is a file with SQL queries to update a database schema. For example, if a new column gets added to a database, n8n creates a migration. On startup, n8n checks for new migrations. The logs of the migrations that ran get stored in the <code>migrations</code> table. n8n uses this table to check for the migrations that got executed earlier. The <code>migrations</code> table has the following fields.</p>
+<p><a href="https://github.com/typeorm/typeorm/blob/master/docs/migrations.md">Migration</a> is a file with SQL queries to update a database schema. For example, if a new column gets added to a database, Doc² creates a migration. On startup, Doc² checks for new migrations. The logs of the migrations that ran get stored in the <code>migrations</code> table. Doc² uses this table to check for the migrations that got executed earlier. The <code>migrations</code> table has the following fields.</p>
 <table>
 <thead>
 <tr>
@@ -9974,7 +9974,7 @@ The <a href="/integrations/credentials/pipedrive/">Pipedrive</a> node has two au
 </tr>
 </tbody>
 </table>
-<p>Below is an example of how n8n logs the migrations that ran in the <code>migrations</code> table.</p>
+<p>Below is an example of how Doc² logs the migrations that ran in the <code>migrations</code> table.</p>
 <p>The timestamp when the migration got executed is stored in the <strong><em>timestamp</em></strong> field. The <strong><em>name</em></strong> field stores the name of the migration that got executed.</p>
 <p><img alt="Logs stored in the migrations table" src="/_images/hosting/databases/migrations.png" /></p>
 <h2 id="webhook-entity">Webhook entity<a class="headerlink" href="#webhook-entity" title="Permanent link">#</a></h2>
@@ -10010,7 +10010,7 @@ The <a href="/integrations/credentials/pipedrive/">Pipedrive</a> node has two au
 </tr>
 </tbody>
 </table>
-<p>Below is an example of how n8n stores information about webhook in the <code>webhook_entity</code> table in the SQLite database. The example below shows the data stored in the table for an example workflow that uses the Webhook node.</p>
+<p>Below is an example of how Doc² stores information about webhook in the <code>webhook_entity</code> table in the SQLite database. The example below shows the data stored in the table for an example workflow that uses the Webhook node.</p>
 <p>The <strong><em>workflowId</em></strong> field contains the id of the workflow that contains the Webhook node. The <strong><em>webhookPath</em></strong> field stores the path used by the Webhook node. Generally, the webhook path gets generated by n8n. If you enter a custom path, the <strong><em>webhookPath</em></strong> field will store that instead.</p>
 <p>Based on your use-case, you can configure the HTTP request method in the Webhook node. The information about the HTTP request method you use with the Webhook node gets stored in the <strong><em>method</em></strong> field. The <strong><em>node</em></strong> field stores the name of the node.</p>
 <p><img alt="Data stored in the webhook_entity table" src="/_images/hosting/databases/webhook_entity.png" /></p>
@@ -10072,7 +10072,7 @@ The <a href="/integrations/credentials/pipedrive/">Pipedrive</a> node has two au
 </tr>
 </tbody>
 </table>
-<p>Below is an example of how n8n stores the workflow data in the workflow_entity table in the SQLite database. The example below shows the data stored in the table for the workflow <em>Example Workflow</em>.</p>
+<p>Below is an example of how Doc² stores the workflow data in the workflow_entity table in the SQLite database. The example below shows the data stored in the table for the workflow <em>Example Workflow</em>.</p>
 <p>The <strong><em>name</em></strong> field contains the workflow name. The <strong><em>active</em></strong> field has the value <code>0</code>, indicating that the workflow is not active. If the workflow was set to active, the <strong><em>active</em></strong> field would contain the value <code>1</code>. The information about the nodes used in the workflow with their configurations gets stored in the <strong><em>nodes</em></strong> field.</p>
 <p>The <strong><em>connections</em></strong> field stores information about the connection between the nodes. We can notice that the Start node is connected to the Set node. The <strong><em>settings</em></strong> field stores information about the additional setting of the workflow. In the example, we can notice that the timezone was changed and set to Asia/Calcutta, and an error workflow was also configured for this workflow. This example workflow doesn't store static data. If a workflow stores data, the <strong><em>staticData</em></strong> field would contain that information.</p>
 <p><img alt="Data stored in the workflow_entity table" src="/_images/hosting/databases/workflow_entity.png" /></p>

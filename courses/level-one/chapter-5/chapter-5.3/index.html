@@ -1402,7 +1402,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../integrations/core-nodes/n8n-nodes-base.n8nTrigger/" class="md-nav__link">
-        n8n Trigger
+        Doc² Trigger
       </a>
     </li>
   
@@ -9848,7 +9848,7 @@
 <h1 id="3-filtering-orders">3. Filtering Orders<a class="headerlink" href="#3-filtering-orders" title="Permanent link">#</a></h1>
 <p>In this step of the workflow you will learn how to filter data using conditional logic and how to use expressions in nodes using the <em>IF</em> node.</p>
 <p>To insert only processing orders into Airtable we need to filter our data by <em>orderStatus</em>. Basically, we want to tell the program that <em>if</em> the <em>orderStatus</em> is processing, <em>then</em> insert all records with this status into Airtable; <em>else</em>, i.e. if the <em>orderStatus</em> is not <em>processing</em>, calculate the sum of all orders with the other <em>orderStatus (booked)</em>.</p>
-<p>This if-then-else command is conditional logic. In n8n workflows, conditional logic can be implemented with the <a href="/integrations/core-nodes/n8n-nodes-base.if/"><strong>IF node</strong></a>, which splits a workflow conditionally based on comparison operations.</p>
+<p>This if-then-else command is conditional logic. In Doc² workflows, conditional logic can be implemented with the <a href="/integrations/core-nodes/n8n-nodes-base.if/"><strong>IF node</strong></a>, which splits a workflow conditionally based on comparison operations.</p>
 <div class="admonition note">
 <p class="admonition-title"> IF vs Switch</p>
 <p>If you need to filter data on more than two conditional routes that are possible with the <em>IF</em> node (true and false), use the <a href="/integrations/core-nodes/n8n-nodes-base.switch/"><em>Switch node</em></a>. The <em>Switch node</em> is similar to the <em>IF</em> node, but supports up to four conditional routes.</p>
@@ -9861,7 +9861,7 @@
 To select this value, click on the wheel icon “Add Expression” on the right side of the Value 1 field.</p>
 <div class="admonition note">
 <p class="admonition-title">Expressions</p>
-<p>An expression is a string of characters and symbols in a programming language that represents a value depending upon its input. In n8n workflows, you can use expressions in a node to refer to another node for input data. In our example, the IF node references the data output by the HTTP Request node.</p>
+<p>An expression is a string of characters and symbols in a programming language that represents a value depending upon its input. In Doc² workflows, you can use expressions in a node to refer to another node for input data. In our example, the IF node references the data output by the HTTP Request node.</p>
 </div>
 <p><figure><img src="/_images/courses/level-one/chapter-two/If-node-expression-editor.png" alt="Expression Editor in the IF node" style="width:100%"><figcaption align = "center"><i>Expression Editor in the IF node</i></figcaption></figure></p>
 </li>
